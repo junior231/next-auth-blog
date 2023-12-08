@@ -5,8 +5,6 @@ const TopNav = () => {
   // get logged in user data and status
   const { data, status } = useSession();
 
-  console.log("logging data: ", data);
-
   return (
     <nav className="nav shadow p-2 justify-content-between mb-3">
       <Link className="nav-link" href="/">
