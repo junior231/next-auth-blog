@@ -32,7 +32,7 @@ const Register = () => {
 
       if (!response.ok) {
         const data = await response.json();
-        toast.error(data.err);
+        toast.error(data.error);
         setLoading(false);
         return;
       }
