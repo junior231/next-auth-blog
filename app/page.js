@@ -1,5 +1,5 @@
-import queryString from "query-string";
 import Link from "next/link";
+import BlogList from "@/components/blogs/BlogList";
 
 async function getBlogs(searchParams) {
   const urlParams = {
@@ -38,10 +38,10 @@ export default async function Home({ searchParams }) {
   const hasNextPage = currentPage < totalPages;
 
   return (
-    <div className="container">
-      <p className="lead text-primary">Home</p>
+    <div className="mt-5">
+      <div className="lead text-primary text-center">Latest Blogs</div>
 
-      <pre>{JSON.stringify(data, null, 4)}</pre>
+      <BlogList blogs={blogs} />
 
       <div className="d-flex justify-content-center">
         <nav aria-label="Page Navigation">

@@ -8,7 +8,7 @@ const TopNav = () => {
   return (
     <nav className="nav shadow p-2 justify-content-between mb-3">
       <Link className="nav-link" href="/">
-        BLOG
+        Home
       </Link>
 
       {status === "authenticated" ? (

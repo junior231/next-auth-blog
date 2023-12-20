@@ -37,7 +37,7 @@ export async function POST(req) {
   } catch (error) {
     return NextResponse.json(
       {
-        err: "Something went wrong in register api. Try again",
+        error: "Something went wrong in register api. Try again",
       },
       { status: 500 }
     );
