@@ -20,6 +20,13 @@ export default withAuth(
     // get user role from token
     const userRole = req?.nextauth?.token?.user?.role;
 
+    /*
+    handle cors: allow public domain access to api. To restrict domains, replace (*) with specified domain name.
+    */
+    if (url?.includes("/api")) {
+      NextResponse.next().headers.append("Access-Control-Allow-Origin", "*");
+    }
+
     if (url?.includes("/admin") && userRole !== "admin") {
       return NextResponse.redirect(new URL("/", req.url));
     }
